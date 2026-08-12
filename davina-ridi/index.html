@@ -5,9 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Davina & Ridi</title>
 
-<!-- FONT TYPEWRITER -->
-<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
-
 <!-- Open Graph -->
 <meta property="og:title"
 content="Davina & Ridi">
@@ -35,17 +32,17 @@ content="summary_large_image">
 
 <meta name="twitter:image"
 content="https://inv.pleasurein.my.id/davina-ridi/cover.jpg">
-
 <style>
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:'Special Elite', cursive;
+  font-family:'Poppins',sans-serif;
+  color:#fff; /* semua text hitam */
 }
 
 body{
-  background:#000;
+  background:#fff;
   overflow:hidden;
 }
 
@@ -71,34 +68,30 @@ body{
 /* TEXT */
 .to{
   font-size:13px;
-  margin-bottom:4px;
-  color:#fff;
-  letter-spacing:1px;
+  margin-bottom:2px;
+}
+
+.sub{
+  font-size:13px;
+  margin-bottom:6px;
 }
 
 .guest{
-  font-size:18px;
-  margin-bottom:16px;
-  color:#fff;
-  line-height:1.5;
-  text-shadow:0 2px 8px rgba(0,0,0,.35);
+  font-size:17px;
+  font-weight:600;
+  margin-bottom:14px;
 }
 
 /* BUTTON */
 .btn{
-  background:#fff;
-  color:#000;
-  padding:12px 28px;
-  border-radius:30px;
+  background:#600a0a;
+  color:#fff;
+  padding:11px 24px;
+  border-radius:22px;
   font-size:13px;
+  font-weight:600;
   cursor:pointer;
   display:inline-block;
-  transition:.3s;
-  box-shadow:0 4px 14px rgba(0,0,0,.2);
-}
-
-.btn:hover{
-  transform:scale(1.04);
 }
 
 /* MUSIC BUTTON */
@@ -130,7 +123,7 @@ body{
   <div class="content">
     <div class="to">Dear,</div>
     <div class="guest" id="guestName">Nama Tamu</div>
-    <div class="btn" id="openBtn">Open Invitation</div>
+    <div class="btn" id="openBtn">Buka Undangan</div>
   </div>
 </div>
 
@@ -150,7 +143,6 @@ body{
 // ======================
 const params = new URLSearchParams(window.location.search);
 const guest = params.get("to");
-
 if(guest){
   document.getElementById("guestName").innerText =
     decodeURIComponent(guest.replace(/\+/g," "));
@@ -179,7 +171,6 @@ musicBtn.addEventListener("click",()=>{
     music.play();
     icon.src="https://cdn-icons-png.flaticon.com/512/727/727245.png";
   }
-
   isPlaying = !isPlaying;
 });
 
@@ -187,7 +178,6 @@ musicBtn.addEventListener("click",()=>{
 // OPEN LINK
 // ======================
 document.getElementById("openBtn").addEventListener("click",()=>{
-
   playMusic();
 
   setTimeout(()=>{
@@ -195,8 +185,7 @@ document.getElementById("openBtn").addEventListener("click",()=>{
       "https://pleasurein.my.id/davina-ridi",
       "_blank"
     );
-  },300);
-
+  }, 300);
 });
 </script>
 
